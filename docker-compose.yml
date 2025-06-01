@@ -35,8 +35,6 @@ services:
       - ./surfsense_backend:/app
     depends_on:
       - db
-    env_file:
-      - ./surfsense_backend/.env
     environment:
       - DATABASE_URL=postgresql+asyncpg://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@db:5432/${POSTGRES_DB:-surfsense}
       - PYTHONPATH=/app
